@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School MIS - Fee Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>SCHOOL MIS</h2>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="student-list.html">Student Management</a></li>
+            <li><a href="teacher-list.html">Teacher Management</a></li>
+            <li><a href="class-timetable.html">Class & Timetable</a></li>
+            <li><a href="fee.html">Fee Management</a></li>
+            <li><a href="parent-portal.html" class="active">Parent Portal</a></li>
+            <li><a href="reports.html">Reports & Analytics</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <!-- <li><a href="logout.html">Logout</a></li> -->
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome-msg">Fee Management</div>
+        </div>
+
+        <div class="fee-management">
+            <h3>Add New Payment</h3>
+            <form id="payment-form">
+                <div class="input-group">
+                    <label for="student-id">Student ID</label>
+                    <input type="text" id="student-id" name="student-id" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="student-name">Student Name</label>
+                    <input type="text" id="student-name" name="student-name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="total-fees">Total Fees (KES)</label>
+                    <input type="number" id="total-fees" name="total-fees" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="amount-paid">Amount Paid (KES)</label>
+                    <input type="number" id="amount-paid" name="amount-paid" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="payment-date">Payment Date</label>
+                    <input type="date" id="payment-date" name="payment-date" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="payment-method">Payment Method</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="Cash">Cash</option>
+                        <option value="Bank Transfer">Bank Transfer</option>
+                        <option value="Mobile Money">Mobile Money</option>
+                    </select>
+                </div>
+
+                <button type="submit">Add Payment</button>
+            </form>
+
+            <h3>Payment Records</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Total Fees (KES)</th>
+                        <th>Amount Paid (KES)</th>
+                        <th>Balance (KES)</th>
+                        <th>Payment Date</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="payment-table-body">
+                    <tr>
+                        <td>001</td>
+                        <td>John Doe</td>
+                        <td>20,000</td>
+                        <td>10,000</td>
+                        <td>10,000</td>
+                        <td>2024-02-01</td>
+                        <td>Mobile Money</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>Jane Smith</td>
+                        <td>18,500</td>
+                        <td>18,500</td>
+                        <td>0</td>
+                        <td>2024-01-25</td>
+                        <td>Bank Transfer</td>
+                        <td>Paid</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("payment-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let studentId = document.getElementById("student-id").value;
+    let studentName = document.getElementById("student-name").value;
+    let totalFees = parseFloat(document.getElementById("total-fees").value);
+    let amountPaid = parseFloat(document.getElementById("amount-paid").value);
+    let balance = totalFees - amountPaid;
+    let paymentDate = document.getElementById("payment-date").value;
+    let paymentMethod = document.getElementById("payment-method").value;
+    let status = balance === 0 ? "Paid" : "Pending";
+
+    let tableBody = document.getElementById("payment-table-body");
+
+    let newRow = document.createElement("tr");
+    newRow.innerHTML = `
+        <td>${studentId}</td>
+        <td>${studentName}</td>
+        <td>${totalFees}</td>
+        <td>${amountPaid}</td>
+        <td>${balance}</td>
+        <td>${paymentDate}</td>
+        <td>${paymentMethod}</td>
+        <td>${status}</td>
+    `;
+
+    tableBody.appendChild(newRow);
+
+    document.getElementById("payment-form").reset();
+});
+    </script>
+</body>
+</html>

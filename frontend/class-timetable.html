@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School MIS - Class & Timetable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>SCHOOL MIS</h2>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="student-list.html">Student Management</a></li>
+            <li><a href="teacher-list.html">Teacher Management</a></li>
+            <li><a href="class-timetable.html">Class & Timetable</a></li>
+            <li><a href="fee.html">Fee Management</a></li>
+            <li><a href="parent-portal.html" class="active">Parent Portal</a></li>
+            <li><a href="reports.html">Reports & Analytics</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <!-- <li><a href="logout.html">Logout</a></li> -->
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome-msg">Class & Timetable Management</div>
+        </div>
+
+        <div class="class-management">
+            <h3>Add New Class</h3>
+            <form action="" method="POST">
+                <div class="input-group">
+                    <label for="class-name">Class Name</label>
+                    <input type="text" id="class-name" name="class-name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="class-teacher">Class Teacher</label>
+                    <input type="text" id="class-teacher" name="class-teacher" required>
+                </div>
+
+                <button type="submit">Add Class</button>
+            </form>
+
+            <h3>All Classes</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Class Name</th>
+                        <th>Class Teacher</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Grade 1</td>
+                        <td>Mr. John Doe</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Grade 2</td>
+                        <td>Ms. Jane Smith</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="timetable-management">
+            <h3>Manage Timetable</h3>
+            <form action="" method="POST">
+                <div class="input-group">
+                    <label for="timetable-class">Select Class</label>
+                    <select id="timetable-class" name="timetable-class" required>
+                        <option value="Grade 1">Grade 1</option>
+                        <option value="Grade 2">Grade 2</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="timetable-day">Day</label>
+                    <select id="timetable-day" name="timetable-day" required>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="timetable-subject">Subject</label>
+                    <input type="text" id="timetable-subject" name="timetable-subject" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="timetable-time">Time</label>
+                    <input type="text" id="timetable-time" name="timetable-time" placeholder="e.g. 10:00 AM - 11:00 AM" required>
+                </div>
+
+                <button type="submit">Add to Timetable</button>
+            </form>
+
+            <h3>Timetable</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Class</th>
+                        <th>Day</th>
+                        <th>Subject</th>
+                        <th>Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Grade 1</td>
+                        <td>Monday</td>
+                        <td>Math</td>
+                        <td>9:00 AM - 10:00 AM</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Grade 2</td>
+                        <td>Tuesday</td>
+                        <td>English</td>
+                        <td>10:00 AM - 11:00 AM</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

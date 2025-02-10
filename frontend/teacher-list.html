@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCHOOL MIS - Teacher Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>School MIS</h2>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="student-list.html">Student Management</a></li>
+            <li><a href="teacher-list.html">Teacher Management</a></li>
+            <li><a href="class-timetable.html">Class & Timetable</a></li>
+            <li><a href="fee.html">Fee Management</a></li>
+            <li><a href="parent-portal.html" class="active">Parent Portal</a></li>
+            <li><a href="reports.html">Reports & Analytics</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <!-- <li><a href="logout.html">Logout</a></li> -->
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome-msg">Teacher Management</div>
+        </div>
+
+        <div class="teacher-management">
+            <h3>Add New Teacher</h3>
+            <form action="" method="POST">
+                <div class="input-group">
+                    <label for="teacher-name">Teacher Name</label>
+                    <input type="text" id="teacher-name" name="teacher-name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="teacher-email">Email</label>
+                    <input type="email" id="teacher-email" name="teacher-email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="teacher-subject">Subject</label>
+                    <input type="text" id="teacher-subject" name="teacher-subject" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="teacher-phone">Phone Number</label>
+                    <input type="tel" id="teacher-phone" name="teacher-phone" required>
+                </div>
+
+                <button type="submit">Add Teacher</button>
+            </form>
+
+            <h3>All Teachers</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Subject</th>
+                        <th>Phone</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td>Math</td>
+                        <td>+123456789</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Jane Smith</td>
+                        <td>janesmith@example.com</td>
+                        <td>English</td>
+                        <td>+987654321</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Michael Johnson</td>
+                        <td>michaeljohnson@example.com</td>
+                        <td>Science</td>
+                        <td>+1122334455</td>
+                        <td>
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

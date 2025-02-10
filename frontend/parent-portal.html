@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Portal - School MIS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>SCHOOL MIS</h2>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="student-list.html">Student Management</a></li>
+            <li><a href="teacher-list.html">Teacher Management</a></li>
+            <li><a href="class-timetable.html">Class & Timetable</a></li>
+            <li><a href="fee.html">Fee Management</a></li>
+            <li><a href="parent-portal.html" class="active">Parent Portal</a></li>
+            <li><a href="reports.html">Reports & Analytics</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            <!-- <li><a href="logout.html">Logout</a></li> -->
+        </ul>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome-msg">Parent Portal</div>
+        </div>
+        <div class="parent-dashboard">
+            <h3>Welcome, Parent</h3>
+            <p>Here you can view your child's academic progress, attendance, and school announcements.</p>
+            
+            <div class="portal-sections">
+                <div class="card">
+                    <h4>Your Child's Academic Reports</h4>
+                    <p>View grades and teacher feedback specific to your child.</p>
+                    <button>View My Child's Reports</button>
+                </div>
+                <div class="card">
+                    <h4>Overall School Performance</h4>
+                    <p>See general class performance statistics.</p>
+                    <button>View Performance</button>
+                </div>
+                <div class="card">
+                    <h4>Your Child's Attendance Records</h4>
+                    <p>Check your child's attendance and tardiness records.</p>
+                    <button>View My Child's Attendance</button>
+                </div>
+                <div class="card">
+                    <h4>School Announcements</h4>
+                    <p>Stay updated with school news and events.</p>
+                    <button>View Announcements</button>
+                </div>
+                <div class="card restricted">
+                    <h4>Fee Payment</h4>
+                    <p>Parents can only view their child's fee balances, payments must be done offline.</p>
+                    <button>View My Child's Fee Balance</button>
+                </div>
+                <div class="card restricted">
+                    <h4>Class Timetable</h4>
+                    <p>Parents can only view their child's class schedule, editing is restricted.</p>
+                    <button>View My Child's Timetable</button>
+                </div>
+                <div class="card">
+                    <h4>Contact Teachers</h4>
+                    <p>Message your child's teacher. Select the class your child is in.</p>
+                    <select>
+                        <option>Select Class</option>
+                        <option>Grade 1</option>
+                        <option>Grade 2</option>
+                        <option>Grade 3</option>
+                        <option>Grade 4</option>
+                        <option>Grade 5</option>
+                        <option>Grade 6</option>
+                        <option>Grade 7</option>
+                        <option>Grade 8</option>
+                    </select>
+                    <button>Contact</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

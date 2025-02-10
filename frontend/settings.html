@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School MIS - Settings</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>SCHOOL MIS</h2>
+        <ul class="nav-links">
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="student-list.html">Student Management</a></li>
+            <li><a href="teacher-list.html">Teacher Management</a></li>
+            <li><a href="class-timetable.html">Class & Timetable</a></li>
+            <li><a href="fee.html">Fee Management</a></li>
+            <li><a href="parent-portal.html">Parent Portal</a></li>
+            <li><a href="reports.html">Reports & Analytics</a></li>
+            <li><a href="settings.html" class="active">Settings</a></li>
+            <!-- <li><a href="logout.html">Logout</a></li> -->
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="welcome-msg">Settings</div>
+        </div>
+
+        <div class="settings-container">
+            <h3>Personalize Your Experience</h3>
+            
+            <div class="settings-section">
+                <h4>Theme</h4>
+                <p>Select your preferred theme for the website.</p>
+                <label for="theme-toggle">Dark Mode</label>
+                <input type="checkbox" id="theme-toggle" class="theme-toggle">
+            </div>
+
+            <div class="settings-section">
+                <h4>Notifications</h4>
+                <p>Choose your notification preferences.</p>
+                <label for="email-notifications">Email Notifications</label>
+                <input type="checkbox" id="email-notifications" class="notification-toggle">
+                <br>
+                <label for="sms-notifications">SMS Notifications</label>
+                <input type="checkbox" id="sms-notifications" class="notification-toggle">
+            </div>
+
+            <div class="settings-section">
+                <h4>Language</h4>
+                <p>Select your preferred language.</p>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="sw">Kiswahili</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+
+            <div class="settings-section">
+                <h4>Account Settings</h4>
+                <button id="change-password-btn">Change Password</button>
+                <button id="delete-account-btn">Delete Account</button>
+            </div>
+        </div>
+    
+        <!-- Logout section -->
+        <div class="logout-container">
+            <button id="logout-btn">Logout</button>
+        </div>
+</div>
+
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        document.getElementById("theme-toggle").addEventListener("change", function() {
+            if (this.checked) {
+                document.body.style.background = "#121212";
+                document.body.style.color = "#ffffff";
+                document.querySelector(".sidebar").style.background = "#1e1e1e";
+            } else {
+                document.body.style.background = "#ffffff";
+                document.body.style.color = "#000000";
+                document.querySelector(".sidebar").style.background = "#f4f4f4";
+            }
+        });
+
+        // Language Change (For demonstration, it will just alert the change)
+        document.getElementById("language-select").addEventListener("change", function() {
+            alert(`Language changed to: ${this.options[this.selectedIndex].text}`);
+        });
+
+        // Example button actions (like Change Password or Delete Account)
+        document.getElementById("change-password-btn").addEventListener("click", function() {
+            alert("Redirecting to password change page...");
+        });
+
+        document.getElementById("delete-account-btn").addEventListener("click", function() {
+            alert("Are you sure you want to delete your account?");
+        });
+
+        document.getElementById("logout-btn").addEventListener("click", function() {
+            const confirmLogout = confirm("Are you sure you want to log out?");
+            if (confirmLogout) {
+                sessionStorage.clear();
+                window.location.href = "login.html";
+            }
+        });
+
+    </script>
+</body>
+</html>
