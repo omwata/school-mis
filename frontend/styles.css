@@ -294,3 +294,57 @@ button#logout-btn {
 button#logout-btn:hover {
     background: #b30000;  /* Darker red on hover */
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-links li {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .nav-links a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .dashboard-content {
+        grid-template-columns: 1fr; /* Full width on small screens */
+        gap: 10px;
+    }
+
+    .login-container {
+        width: 90%; /* Adjust width to fit smaller screens */
+        padding: 15px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .welcome-msg {
+        font-size: 18px;
+    }
+
+    .student-list, .teacher-management, .class-management, .timetable-mana
+
