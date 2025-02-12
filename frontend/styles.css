@@ -346,5 +346,8 @@ button#logout-btn:hover {
         font-size: 18px;
     }
 
-    .student-list, .teacher-management, .class-management, .timetable-mana
+       .student-list, .teacher-management, .class-management, .timetable-mana
+    gement, .fee-management, .settings-container, .logout-section {
+        width: 90%;} /* Adjust width to fit smaller screens */
+    }
 
